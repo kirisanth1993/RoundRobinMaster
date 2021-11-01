@@ -1,0 +1,91 @@
+.setupContainer{
+    .guessAddBtn{
+        color: #fff;
+        background-color: #004165;
+    }
+
+    .guessAddBtn:hover{
+        color: #004165;
+        background-color: #fff;
+        border: 1px solid #004165;
+    }
+
+}
+
+.modalMainContainer{
+    overflow-y: hidden;
+    .guessAddBtn{
+        color: #fff;
+        background-color: #004165;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        width: 20%;
+    }
+    
+    .guessAddBtn:hover{
+        color: #004165;
+        background-color: #fff;
+        border: 1px solid #004165;
+    }
+}
+
+.modalHeader{
+    color: #fff;
+    background-color: #004165;
+    margin-bottom: 20px !important;
+    
+    h2{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.cancelIcon{
+    cursor: pointer;
+}
+
+.modalContext{
+    width: 30rem;
+    min-height: 25rem;
+}
+
+.actionIcon{
+    color: #004165;
+    cursor: pointer;
+    padding-left: 0.3rem;
+}
+
+.singleFieldBlock{
+    margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.listView{
+    margin-top: 1.5rem;
+}
+
+.outSingleUserBlock{
+    padding: 0.5rem;
+}
+
+.singleUserBlock{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border: 3px solid #004165;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    color: #004165;
+    
+}
+
+.selectedSingleUserBlock{
+    background-color: #004165 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+
+

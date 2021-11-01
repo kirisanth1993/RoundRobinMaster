@@ -1,9 +1,12 @@
-import './App.css';
+import './App.scss';
 import Layout from './components/layout/Layout';
+import { Grid } from '@material-ui/core';
 
 function App() {
   return (
-    <Layout/>
+    <Grid className="main-container">
+      <Layout/>
+    </Grid>
   );
 }
 
