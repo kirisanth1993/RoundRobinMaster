@@ -1,0 +1,26 @@
+.heading{
+    margin: 5px 0;
+}
+
+.speakerName{
+    color: #004165;
+}
+
+.currentName{
+    color: #004165;
+    font-size: 22px;
+}
+
+.btnWrap{
+
+    .setupBtn{
+        color: #fff;
+        background-color: #004165;
+    }
+
+    .setupBtn:hover{
+        color: #004165;
+        background-color: #fff;
+        border: 1px solid #004165;
+    }
+}

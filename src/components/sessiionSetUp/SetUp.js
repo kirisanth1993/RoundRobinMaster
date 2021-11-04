@@ -14,6 +14,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import cloneDeep from 'lodash/cloneDeep';
 import SpeakerOrdering from './SpeakerOrdering';
 import GamesIcon from '@material-ui/icons/Games';
+import Launch from '../launch/Launch';
 
 export default function SetUp(props){
     const [isGuestModalOpen, setIsGuestModalOpen] = useState(false);
@@ -37,12 +38,12 @@ export default function SetUp(props){
         newGuestList.map((singleGuest) => {
             speakerList.push({
                 name: "Guest " + singleGuest.name,
-                imageLink: "commonAvatar.png",
+                imageLink: "guest1.jpg",
                 isSelected: true
             });
             filteredSpeakerList.push({
                 name: "Guest " + singleGuest.name,
-                imageLink: "commonAvatar.png",
+                imageLink: "guest1.jpg",
                 isSelected: true
             });
         });
@@ -90,7 +91,7 @@ export default function SetUp(props){
 
     const orderGenerateAction = (() => {
         let pureSpeakerList = speakerList.filter((singlePerson) => {
-            return(singlePerson.name !== selectedTimer && singlePerson.name !== selectedRoundRobin);
+            return(singlePerson.isSelected && singlePerson.name !== selectedTimer && singlePerson.name !== selectedRoundRobin);
         });
         let randomOrderedList = pureSpeakerList.sort(() => Math.random() - 0.5);
         if(selectedRoundRobin){
@@ -251,10 +252,14 @@ export default function SetUp(props){
                     </Grid>
                 </Grid>
             }
-            {/* {
-                isLaunchPage &&
-                </>
-            } */}
+            {
+                isLaunchPage && (arrangedList.length > 0) &&
+                <Launch
+                    personList={ arrangedList }
+                    topic={ todaysTopic }
+                    backToSetupAction= { () => { setIsLaunchPage(false) } }
+                />
+            }
         </>
     );
 }  

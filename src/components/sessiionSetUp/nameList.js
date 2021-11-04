@@ -1,102 +1,67 @@
 export const nameList = [
     {
-        name: "TM Kirisanth",
-        imageLink: "3.jpg",
+        name: "DTM Dilrukshi",
+        imageLink: "dilrukshi.jpg",
         isSelected: false
     },
     {
-        name: "TM Faslan",
-        imageLink: "4.jpg",
+        name: "TM Dinusha",
+        imageLink: "dinusha.jpg",
+        isSelected: false
+    },
+    {
+        name: "TM Kavingi",
+        imageLink: "kavingi.jpg",
+        isSelected: false
+    },
+    {
+        name: "TM Malya",
+        imageLink: "malya.jpg",
+        isSelected: false
+    },
+    {
+        name: "TM Yasasmi",
+        imageLink: "yasasmi.jpg",
         isSelected: false
     },
     {
         name: "TM Gayal",
-        imageLink: "5.jpg",
+        imageLink: "gayal.png",
+        isSelected: false
+    },
+    {
+        name: "TM Shanaka",
+        imageLink: "shanaka.jpg",
+        isSelected: false
+    },
+    {
+        name: "TM Dulith",
+        imageLink: "dulith.jpg",
         isSelected: false
     },
     {
         name: "TM Charen",
-        imageLink: "6.jpg",
+        imageLink: "charen.jpg",
         isSelected: false
     },
     {
-        name: "TM kinoj",
-        imageLink: "7.jpg",
+        name: "TM Arjuna",
+        imageLink: "arjuna.jpg",
         isSelected: false
     },
     {
-        name: "TM dfdfdfdf",
-        imageLink: "8.jpg",
+        name: "DTM Arjuna",
+        imageLink: "arjuna.jpg",
         isSelected: false
     },
     {
-        name: "TM Fasdfdfdfdfdlan",
-        imageLink: "9.jpg",
+        name: "TM Kirisanth",
+        imageLink: "kirisanth.jpg",
         isSelected: false
     },
     {
-        name: "TM Grtrtrtrtrayal",
-        imageLink: "10.jpg",
-        isSelected: false
-    },
-    {
-        name: "TM rtrtrtrt",
-        imageLink: "11.jpg",
-        isSelected: false
-    },
-    {
-        name: "TM rtrtrtrt",
-        imageLink: "12.jpg",
-        isSelected: false
-    },
-    {
-        name: "TM Kifgfgrisanth",
-        imageLink: "13.jpg",
-        isSelected: false
-    },
-    {
-        name: "TM Fasfgfglan",
-        imageLink: "14.jpg",
-        isSelected: false
-    },
-    {
-        name: "TM Gafgfgyal",
-        imageLink: "15.jpg",
-        isSelected: false
-    },
-    {
-        name: "TM Cfgfharen",
-        imageLink: "16.jpg",
-        isSelected: false
-    },
-    {
-        name: "TM kifgnofgj",
-        imageLink: "17.jpg",
-        isSelected: false
-    },
-    {
-        name: "TM dfdfdfdf",
-        imageLink: "18.jpg",
-        isSelected: false
-    },
-    {
-        name: "TM Fasdfdfdfdfdlan",
-        imageLink: "15.jpg",
-        isSelected: false
-    },
-    {
-        name: "TM Grtrtrtrtrayal",
-        imageLink: "5.jpg",
-        isSelected: false
-    },
-    {
-        name: "TM rtrtrtrt",
-        imageLink: "3.jpg",
-        isSelected: false
-    },
-    {
-        name: "TM rtrtrtrt",
-        imageLink: "3.jpg",
+        name: "TM Shemaya",
+        imageLink: "shemaya.jpg",
         isSelected: false
     },
 ];
