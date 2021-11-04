@@ -1,38 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import "./SetUp.scss";
 
-import { Grid, Typography, Button } from '@material-ui/core';
-import { nameList } from './nameList';
+import { Grid } from '@material-ui/core';
+
 export default function ListSelection(props){
-    const [speakerList, setSpeakerList] = useState(nameList);
-
-    useEffect(() => {
-        props.newlyArrivedGuests.map((singleGuest) => {
-            speakerList.push({
-                name: "Guest " + singleGuest.name,
-                imageLink: "commonAvatar.png",
-                isSelected: true
-            });
-        });
-        setSpeakerList([...speakerList]);
-    },[props.newlyArrivedGuests]);
-
-    const speakerSelectAction = (index) => {
-        speakerList[index].isSelected = !speakerList[index].isSelected;
-        setSpeakerList([...speakerList]);
-    }
-
     return(
         <Grid className="listSelectionContainer" container>
             {
-                speakerList.map((singleSpeaker, singleSpeakerIndex) => {
-                    console.log("singleSpeaker", singleSpeaker.isSelected);
+                props.speakerList.map((singleSpeaker, singleSpeakerIndex) => {
                     return(
-                        <Grid item md={4} lg={4} sm={12} className="outSingleUserBlock">
+                        <Grid item md={4} lg={4} sm={12} className="outSingleUserBlock" container>
                             <Grid 
                                 className={ "singleUserBlock " + (singleSpeaker.isSelected ? "selectedSingleUserBlock" : "") } 
                                 container
-                                onClick={ () => { speakerSelectAction(singleSpeakerIndex); } }
+                                onClick={ () => { props.speakerSelectAction(singleSpeakerIndex); } }
                                 >
                                 <Grid item md={3} lg={3} sm={3}>
                                     <img 
@@ -41,12 +22,12 @@ export default function ListSelection(props){
                                         src={ require(`../../assets/${singleSpeaker.imageLink}`).default }
                                     />
                                 </Grid>
-                                <Grid item md={7} lg={7} sm={3}>
+                                <Grid item md={9} lg={9} sm={9}>
                                     <h2>{ singleSpeaker.name }</h2>
                                 </Grid>
-                                <Grid item md={2} lg={2} sm={3}>
+                                {/* <Grid item md={2} lg={2} sm={3}>
                                     <h2>{ singleSpeakerIndex + 1 }</h2>
-                                </Grid>
+                                </Grid> */}
                             </Grid>
                         </Grid>
                     );
