@@ -8,7 +8,7 @@ export default function Body(props){
         <Grid className="body-container">
             <Router>
                 <Switch>
-                    <Route path="/" exact component={SetUp}/>
+                    <Route path="/RoundRobinMaster" exact component={SetUp}/>
                 </Switch>
             </Router>
         </Grid>
