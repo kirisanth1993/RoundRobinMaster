@@ -10,6 +10,7 @@ const Launch = (props) => {
     const{ personList, topic, backToSetupAction } = props;
     const[speakerList, setSpeakerList] = useState(cloneDeep(personList));
     const[currentSpeakerIndex, setCurrentSpeakerIndex] = useState(0);
+    const[isImgSlider, setIsImgSlider] = useState(false);
 
     useEffect(() => {
         setSpeakerList(personList.map((singleSpeaker) => {
@@ -18,6 +19,9 @@ const Launch = (props) => {
                 url: require("../../assets/" + singleSpeaker.imageLink).default
             }
         }));
+        setTimeout(() => {
+            setIsImgSlider(true);
+        },500);
     },[personList]);
 
     return (
@@ -41,16 +45,20 @@ const Launch = (props) => {
             </Grid>
             <Grid container>
                 <Grid item md={8} lg={8} sm={8}>
-                    <SimpleImageSlider
-                        width={600}
-                        height={490}
-                        images={speakerList}
-                        showBullets={true}
-                        showNavs={true}
-                        navSize={ 80 }
-                        loop={ false }
-                        onStartSlide={ (index) => { setCurrentSpeakerIndex(index - 1) } }
-                    />
+                    {
+                        isImgSlider &&
+                        <SimpleImageSlider
+                            width={600}
+                            height={490}
+                            images={speakerList}
+                            showBullets={true}
+                            showNavs={true}
+                            navSize={ 80 }
+                            loop={ false }
+                            startIndex={0}
+                            onStartSlide={ (index) => { setCurrentSpeakerIndex(index - 1) } }
+                        />
+                    }
                     <Grid container display="flex" justifyContent="center">
                         {
                             speakerList[currentSpeakerIndex] &&

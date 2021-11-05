@@ -1,67 +1,62 @@
 export const nameList = [
     {
         name: "DTM Dilrukshi",
-        imageLink: "dilrukshi.jpg",
+        imageLink: "dilrukshi1.jpg",
         isSelected: false
     },
     {
         name: "TM Dinusha",
-        imageLink: "dinusha.jpg",
+        imageLink: "dinusha1.jpg",
         isSelected: false
     },
     {
         name: "TM Kavingi",
-        imageLink: "kavingi.jpg",
+        imageLink: "kavingi1.jpg",
         isSelected: false
     },
     {
         name: "TM Malya",
-        imageLink: "malya.jpg",
+        imageLink: "malya1.jpg",
         isSelected: false
     },
     {
         name: "TM Yasasmi",
-        imageLink: "yasasmi.jpg",
+        imageLink: "yasasmi1.jpg",
         isSelected: false
     },
     {
         name: "TM Gayal",
-        imageLink: "gayal.png",
+        imageLink: "gayal.jpg",
         isSelected: false
     },
     {
         name: "TM Shanaka",
-        imageLink: "shanaka.jpg",
+        imageLink: "shanaka1.jpg",
         isSelected: false
     },
     {
         name: "TM Dulith",
-        imageLink: "dulith.jpg",
+        imageLink: "dulith1.jpg",
         isSelected: false
     },
     {
         name: "TM Charen",
-        imageLink: "charen.jpg",
-        isSelected: false
-    },
-    {
-        name: "TM Arjuna",
-        imageLink: "arjuna.jpg",
+        imageLink: "charen1.jpg",
         isSelected: false
     },
     {
         name: "DTM Arjuna",
-        imageLink: "arjuna.jpg",
+        imageLink: "arjuna1.jpg",
         isSelected: false
     },
     {
         name: "TM Kirisanth",
-        imageLink: "kirisanth.jpg",
+        imageLink: "kirisanth1.jpg",
         isSelected: false
     },
     {
         name: "TM Shemaya",
-        imageLink: "shemaya.jpg",
+        imageLink: "shemaya1.jpg",
         isSelected: false
     },
 ];
