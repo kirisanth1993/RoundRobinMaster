@@ -59,7 +59,7 @@ const Launch = (props) => {
                             onStartSlide={ (index) => { setCurrentSpeakerIndex(index - 1) } }
                         />
                     }
-                    <Grid container display="flex" justifyContent="center">
+                    <Grid container display="flex" justifyContent="center" className="currentSpeakerHeading">
                         {
                             speakerList[currentSpeakerIndex] &&
                             <h2 className="speakerName">
