@@ -82,16 +82,20 @@ export default function SetUp(props){
         setNewGuestList([...list]);
     }
 
-    const speakerSelectAction = (index) => {
-        speakerList[index].isSelected = !speakerList[index].isSelected;
-        filteredSpeakerList[index].isSelected = speakerList[index].isSelected;
+    const speakerSelectAction = (index, clickedSpeaker) => {
+        speakerList.map((singleSpeaker) => {
+            if(singleSpeaker.name === clickedSpeaker.name){
+                singleSpeaker.isSelected = !singleSpeaker.isSelected;
+            }
+        });
+
         setSpeakerList([...speakerList]);
-        setFilteredSpeakerList([...filteredSpeakerList]);
+        // setFilteredSpeakerList([...filteredSpeakerList]);
     }
 
     const orderGenerateAction = (() => {
         let pureSpeakerList = speakerList.filter((singlePerson) => {
-            return(singlePerson.isSelected && singlePerson.name !== selectedTimer && singlePerson.name !== selectedRoundRobin);
+            return(singlePerson.isSelected && (singlePerson.name !== selectedTimer) && (singlePerson.name !== selectedRoundRobin));
         });
         let randomOrderedList = pureSpeakerList.sort(() => Math.random() - 0.5);
         if(selectedRoundRobin){
@@ -150,46 +154,12 @@ export default function SetUp(props){
                             />
                         </Grid>
                         <Grid item className="parentAutoComplete" lg={3} md={3} sm={6}>
-                            <Box className="innerIcon"><AccessAlarmIcon height={30} /></Box>
-                            <Autocomplete
-                                className="autoFillInput"
-                                id='searchSelection'
-                                name='searchSelection'
-                                value={selectedTimer}
-                                onChange={(event,newValue)=>{
-                                    if(!newValue){
-                                        setSelectedTimer(null);
-                                        setSelectedTimerObj(null);
-                                    }else{
-                                        setSelectedTimer(newValue.name);
-                                        setSelectedTimerObj(newValue);
-                                    }
-                                }}
-                                options={timerOptions}
-                                getOptionLabel={(option)=>option["name"]?option["name"]:""}
-                                getOptionDisabled={(option)=>option.isDisabled?true:false}
-                                getOptionSelected={async (option,value)=>option && value && option.id===value.id }
-                                margin={"none"}
-                                placeholder={ "Timer" }
-                                fullWidth
-                                renderInput={(params) => (
-                                    <TextField
-                                        {...params}
-                                        margin="none"
-                                        variant="outlined"
-                                        placeholder={ "Timer" }
-                                    />
-                                )}
-                                // loading={isClinicsLoading}
-                            />
-                        </Grid>
-                        <Grid item className="parentAutoComplete" lg={3} md={3} sm={6}>
                             <Box className="innerIcon"><PersonIcon height={30} /></Box>
                             <Autocomplete
                                 className="autoFillInput"
                                 id='searchSelection'
                                 name='searchSelection'
-                                value={selectedRoundRobin}
+                                value={selectedRoundRobinObj}
                                 onChange={(event,newValue)=>{
                                     if(!newValue){
                                         setSelectedRoundRobin(null);
@@ -212,6 +182,40 @@ export default function SetUp(props){
                                         margin="none"
                                         variant="outlined"
                                         placeholder={ "Round Robin Master" }
+                                    />
+                                )}
+                                // loading={isClinicsLoading}
+                            />
+                        </Grid>
+                        <Grid item className="parentAutoComplete" lg={3} md={3} sm={6}>
+                            <Box className="innerIcon"><AccessAlarmIcon height={30} /></Box>
+                            <Autocomplete
+                                className="autoFillInput"
+                                id='searchSelection'
+                                name='searchSelection'
+                                value={selectedTimerObj}
+                                onChange={(event,newValue)=>{
+                                    if(!newValue){
+                                        setSelectedTimer(null);
+                                        setSelectedTimerObj(null);
+                                    }else{
+                                        setSelectedTimer(newValue.name);
+                                        setSelectedTimerObj(newValue);
+                                    }
+                                }}
+                                options={timerOptions}
+                                getOptionLabel={(option)=>option["name"]?option["name"]:""}
+                                getOptionDisabled={(option)=>option.isDisabled?true:false}
+                                getOptionSelected={async (option,value)=>option && value && option.id===value.id }
+                                margin={"none"}
+                                placeholder={ "Timer" }
+                                fullWidth
+                                renderInput={(params) => (
+                                    <TextField
+                                        {...params}
+                                        margin="none"
+                                        variant="outlined"
+                                        placeholder={ "Timer" }
                                     />
                                 )}
                                 // loading={isClinicsLoading}
@@ -247,7 +251,7 @@ export default function SetUp(props){
                     <Grid className="listView">
                         <ListSelection
                             speakerList={ filteredSpeakerList }
-                            speakerSelectAction={ (index) => { speakerSelectAction(index) } }
+                            speakerSelectAction={ (index, clickedSpeaker) => { speakerSelectAction(index, clickedSpeaker) } }
                         />
                     </Grid>
                 </Grid>
