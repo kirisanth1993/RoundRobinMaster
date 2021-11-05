@@ -13,7 +13,7 @@ export default function ListSelection(props){
                             <Grid 
                                 className={ "singleUserBlock " + (singleSpeaker.isSelected ? "selectedSingleUserBlock" : "") } 
                                 container
-                                onClick={ () => { props.speakerSelectAction(singleSpeakerIndex); } }
+                                onClick={ () => { props.speakerSelectAction(singleSpeakerIndex, singleSpeaker); } }
                                 >
                                 <Grid item md={3} lg={3} sm={3}>
                                     <img 
