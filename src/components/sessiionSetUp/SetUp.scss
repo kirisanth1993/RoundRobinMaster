@@ -72,7 +72,7 @@
 }
 
 .modalContext{
-    width: 30rem;
+    // width: 30rem;
     min-height: 25rem;
 }
 
@@ -86,10 +86,6 @@
     margin-top: 0.8rem;
     display: flex;
     align-items: center;
-}
-
-.listView{
-    margin-top: 1.5rem;
 }
 
 .outSingleUserBlock{
@@ -115,6 +111,11 @@
 
 .parentAutoComplete, .searchMainContainer{
     position: relative;
+    margin-bottom: 10px !important;
+}
+
+.addAndGenerateBtn{
+    margin-bottom: 10px !important;
 }
 
 .innerIcon{

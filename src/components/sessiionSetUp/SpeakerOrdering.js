@@ -19,9 +19,10 @@ export default function SpeakerOrdering(props){
         <Dialog
             className="modalMainContainer"
             open={ isModalOpen }
-            onClose={ () => { modalCloseAction(); } }
+            // onClose={ () => { modalCloseAction(); } }
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
+            fullWidth
         >
             <DialogTitle id="alert-dialog-title" className="modalHeader">
                 Speaker Order
@@ -47,10 +48,10 @@ export default function SpeakerOrdering(props){
                         orderedList.map((singleSpeaker, singleSpeakerIndex) => { 
                             return(
                                 <Grid container className="singleSpeakerBlock" fullWidth>
-                                    <Grid item lg={1} md={1}>
+                                    <Grid item lg={1} md={1} sm={1} xs={1}>
                                         <h3>{ singleSpeakerIndex + 1 }</h3>
                                     </Grid>
-                                    <Grid item lg={10} md={10}>
+                                    <Grid item lg={10} md={10} sm={10} xs={10}>
                                         <h3>{ singleSpeaker.name + (singleSpeaker.type ? (" - " + singleSpeaker.type) : "") }</h3>
                                     </Grid>
                                 </Grid>

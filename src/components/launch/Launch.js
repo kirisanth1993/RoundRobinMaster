@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import SimpleImageSlider from "react-simple-image-slider";
-import { Grid, Typography, Button, TextField, Box } from '@material-ui/core';
+import { Grid, Typography, Button, TextField, Box, Hidden } from '@material-ui/core';
 import cloneDeep from 'lodash/cloneDeep';
 import "./Launch.scss";
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -27,39 +27,43 @@ const Launch = (props) => {
     return (
         <Grid className="launchContainer">
             <Grid container>
-                <Grid container display="flex" justifyContent="center" lg={10} md={10} sm={10}>
+                <Grid container lg={10} md={10} sm={10} xs={10} className="launchTopic">
                     <h2 className="heading">Topic - {topic}</h2>
                 </Grid>
-                <Grid item lg={2} md={2} sm={6} display="flex" container justifyContent="flex-end" className="btnWrap">
+                <Grid item lg={2} md={2} sm={2} xs={2} display="flex" container justifyContent="flex-end" className="btnWrap">
                     <Button 
-                        // fullWidth 
+                        fullWidth 
                         size="large"
                         className="setupBtn" 
                         variant="contained" 
                         endIcon={<SettingsIcon/>} 
                         onClick={ () => { backToSetupAction() } }
                         >
-                        Back to Setup
+                        <Hidden xsDown>Back to Setup</Hidden>
                     </Button>
                 </Grid>
             </Grid>
-            <Grid container>
-                <Grid item md={8} lg={8} sm={8}>
+            <Grid container display="flex" justifyContent="space-between">
+                <Grid item md={5} lg={5} sm={5} xs={12}>
+                    {console.log("window.screen.height", window.screen.height)}
                     {
                         isImgSlider &&
                         <SimpleImageSlider
-                            width={600}
+                            width={ "100%" }
+                            // height={490}
+                            // height={window.screen.height < 1080 ? 490 : 690}
                             height={490}
                             images={speakerList}
                             showBullets={true}
                             showNavs={true}
+                            style={{position: "relative"}}
                             navSize={ 80 }
                             loop={ false }
                             startIndex={0}
                             onStartSlide={ (index) => { setCurrentSpeakerIndex(index - 1) } }
                         />
                     }
-                    <Grid container display="flex" justifyContent="center" className="currentSpeakerHeading">
+                    <Grid container display="flex" justifyContent="center">
                         {
                             speakerList[currentSpeakerIndex] &&
                             <h2 className="speakerName">
@@ -68,7 +72,7 @@ const Launch = (props) => {
                         }
                     </Grid>
                 </Grid>
-                <Grid item md={4} lg={4} sm={4}>
+                <Grid item md={4} lg={4} sm={4} xs={12} className="nameListBlock">
                     {
                         speakerList.slice(currentSpeakerIndex, speakerList.length).map((singleSpeaker, singleSpeakerIndex) => (
                             <Grid container className={ (singleSpeakerIndex === 0) ? "currentName" : ""}>

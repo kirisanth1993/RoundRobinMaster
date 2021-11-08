@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import "./SetUp.scss";
 
-import { Grid, Typography, Button, TextField, Box } from '@material-ui/core';
+import { Grid, Button, TextField, Box } from '@material-ui/core';
 import { Autocomplete } from '@material-ui/lab';
 
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
@@ -15,6 +15,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import SpeakerOrdering from './SpeakerOrdering';
 import GamesIcon from '@material-ui/icons/Games';
 import Launch from '../launch/Launch';
+import Hidden from '@material-ui/core/Hidden';
 
 export default function SetUp(props){
     const [isGuestModalOpen, setIsGuestModalOpen] = useState(false);
@@ -38,12 +39,12 @@ export default function SetUp(props){
         newGuestList.map((singleGuest) => {
             speakerList.push({
                 name: "Guest " + singleGuest.name,
-                imageLink: "guest1.jpg",
+                imageLink: "guest.png",
                 isSelected: true
             });
             filteredSpeakerList.push({
                 name: "Guest " + singleGuest.name,
-                imageLink: "guest1.jpg",
+                imageLink: "guest1.png",
                 isSelected: true
             });
         });
@@ -141,7 +142,7 @@ export default function SetUp(props){
                         />
                     }
                     <Grid container display="flex" justifyContent="space-between">
-                        <Grid item lg={3} md={3} sm={6} className="searchMainContainer">
+                        <Grid item lg={3} md={3} sm={6} xs={12} className="searchMainContainer">
                             <Box className="searchIcon"><SearchIcon height={30} /></Box>
                             <TextField 
                                 className="searchInput"
@@ -153,7 +154,7 @@ export default function SetUp(props){
                                 variant="outlined"
                             />
                         </Grid>
-                        <Grid item className="parentAutoComplete" lg={3} md={3} sm={6}>
+                        <Grid item className="parentAutoComplete" lg={3} md={3} sm={6} xs={12}>
                             <Box className="innerIcon"><PersonIcon height={30} /></Box>
                             <Autocomplete
                                 className="autoFillInput"
@@ -187,7 +188,7 @@ export default function SetUp(props){
                                 // loading={isClinicsLoading}
                             />
                         </Grid>
-                        <Grid item className="parentAutoComplete" lg={3} md={3} sm={6}>
+                        <Grid item className="parentAutoComplete" lg={3} md={3} sm={6} xs={12}>
                             <Box className="innerIcon"><AccessAlarmIcon height={30} /></Box>
                             <Autocomplete
                                 className="autoFillInput"
@@ -221,29 +222,29 @@ export default function SetUp(props){
                                 // loading={isClinicsLoading}
                             />
                         </Grid>
-                        <Grid item lg={3} md={3} sm={6} container>
-                            <Grid item lg={6} md={6} sm={6} container justifyContent="flex-end">
+                        <Grid item lg={3} md={3} sm={6} xs={12} className="addAndGenerateBtn" container justifyContent="space-around">
+                            <Grid item lg={5} md={5} sm={5} xs={5} container justifyContent="center">
                                 <Button 
-                                    // fullWidth 
+                                    fullWidth 
                                     size="large"
                                     className="cancelBtn" 
                                     variant="contained" 
                                     endIcon={<PersonAddIcon/>} 
                                     onClick={ (e) => { setIsGuestModalOpen(true) } }
                                     >
-                                    Add Guests
+                                    <Hidden xsDown>Guests</Hidden>
                                 </Button>
                             </Grid>
-                            <Grid item lg={5} md={5} sm={6} container>
+                            <Grid item lg={5} md={5} sm={5} xs={5} container justifyContent="center">
                                 <Button 
-                                    // fullWidth 
+                                    fullWidth 
                                     size="large"
                                     className="guessAddBtn" 
                                     variant="contained" 
                                     endIcon={<GamesIcon/>} 
                                     onClick={ (e) => { orderGenerateAction() } }
                                     >
-                                    Generate
+                                    <Hidden xsDown>Generate</Hidden>
                                 </Button>
                             </Grid>
                         </Grid>

@@ -17,3 +17,9 @@
 .body-container{
     padding: 1rem 2rem;
 }
+
+.headerContainer{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
