@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Button, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, TextField, Typography  } from '@material-ui/core';
+import { Grid, Button, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, TextField, Typography, Hidden  } from '@material-ui/core';
 import CancelIcon from '@material-ui/icons/Cancel';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -61,9 +61,10 @@ export default function GuestAddingModal(props){
         <Dialog
             className="modalMainContainer"
             open={ isModalOpen }
-            onClose={ () => { modalCloseAction(); } }
+            // onClose={ () => { modalCloseAction(); } }
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
+            fullWidth
         >
             <DialogTitle id="alert-dialog-title" className="modalHeader">
                 Add Today's Guests Here
@@ -79,15 +80,17 @@ export default function GuestAddingModal(props){
                         newGuestList.map((singleGuest, singleGuestIndex) => { 
                             return(
                                 <Grid container className="singleFieldBlock" fullWidth>
-                                    <Grid item lg={1} md={1}>
-                                        <h3>{ singleGuestIndex + 1 }</h3>
-                                    </Grid>
-                                    <Grid item lg={8} md={8}>
+                                    <Hidden xsDown>
+                                        <Grid item lg={1} md={1} sm={1} xs={1}>
+                                            <h3>{ singleGuestIndex + 1 }</h3>
+                                        </Grid>
+                                    </Hidden>
+                                    <Grid item lg={8} md={8} sm={8} xs={8}>
                                     <TextField 
                                         fullWidth
                                         id="outlined-basic" 
                                         size="small"
-                                        label="Enter the Guest's Name" 
+                                        label={"Guest " + (singleGuestIndex+1)} 
                                         className="nameTextBox"
                                         variant="outlined"
                                         error={ singleGuest.isError }
@@ -95,7 +98,8 @@ export default function GuestAddingModal(props){
                                         onChange={ (e) => { nameChangeAction(e, singleGuestIndex) } }
                                     />
                                     </Grid>
-                                    <Grid item lg={3} md={3} className="addAndDelete">
+                                    <Grid item lg={3} md={3} sm={3} xs={4}>
+                                        <Grid item>
                                         {
                                             newGuestList.length > 1 &&
                                             <DeleteIcon
@@ -112,6 +116,7 @@ export default function GuestAddingModal(props){
                                                 onClick={ (e) => { guestAddAction(e, singleGuestIndex) } }
                                             />
                                         }
+                                        </Grid>
                                     </Grid>
                                 </Grid>
                             )

@@ -12,7 +12,7 @@
 }
 
 .btnWrap{
-
+    margin-bottom: 15px !important;
     .setupBtn{
         color: #fff;
         background-color: #004165;
@@ -25,6 +25,20 @@
     }
 }
 
-.currentSpeakerHeading{
-    width: 600px !important;
+.launchTopic{
+    margin-bottom: 15px;
 }
+
+// .nameListBlock{
+//     overflow-y: scroll;
+//     @media screen and (max-width: 1920px) {
+//         height: 480px       
+//     }
+//     @media screen and (max-width: 992px) {
+//         height: 400px       
+//     }
+//     @media screen and (max-width: 768px) {
+//         height: 350px       
+//     }
+// }
+

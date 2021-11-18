@@ -9,7 +9,7 @@ export default function ListSelection(props){
             {
                 props.speakerList.map((singleSpeaker, singleSpeakerIndex) => {
                     return(
-                        <Grid item md={4} lg={4} sm={12} className="outSingleUserBlock" container>
+                        <Grid item md={4} lg={4} sm={12} xs={12} className="outSingleUserBlock" container>
                             <Grid 
                                 className={ "singleUserBlock " + (singleSpeaker.isSelected ? "selectedSingleUserBlock" : "") } 
                                 container
