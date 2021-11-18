@@ -20,12 +20,10 @@ import Hidden from '@material-ui/core/Hidden';
 export default function SetUp(props){
     const [isGuestModalOpen, setIsGuestModalOpen] = useState(false);
     const [newGuestList, setNewGuestList] = useState([]);
-    const [selectedTimer, setSelectedTimer] = useState();
-    const [selectedTimerObj, setSelectedTimerObj] = useState();
     const [timerOptions, setTimerOptions] = useState([]);
-    const [selectedRoundRobin, setSelectedRoundRobin] = useState();
-    const [selectedRoundRobinObj, setSelectedRoundRobinObj] = useState();
     const [roundRobinOptions, setRoundRobinOptions] = useState([]);
+    const [selectedTimerObj, setSelectedTimerObj] = useState({});
+    const [selectedRoundRobinObj, setSelectedRoundRobinObj] = useState({});
     const [searchKey, setSearchKey] = useState("");
     const [isSpeakerOrderModalOpen, setIsSpeakerOrderModalOpen] = useState(false);
     const [todaysTopic, setTodaysTopic] = useState("");
@@ -36,13 +34,15 @@ export default function SetUp(props){
     const [filteredSpeakerList, setFilteredSpeakerList] = useState(cloneDeep(nameList));
 
     useEffect(() => {
-        newGuestList.map((singleGuest) => {
+        newGuestList.map((singleGuest, singleGuestIndex) => {
             speakerList.push({
+                id: speakerList.length + singleGuestIndex + 1,
                 name: "Guest " + singleGuest.name,
                 imageLink: "guest.png",
                 isSelected: true
             });
             filteredSpeakerList.push({
+                id: speakerList.length + singleGuestIndex + 1,
                 name: "Guest " + singleGuest.name,
                 imageLink: "guest1.png",
                 isSelected: true
@@ -58,26 +58,26 @@ export default function SetUp(props){
         setFilteredSpeakerList([...speakerList.filter((singlePerson) => {
             return(
                 singlePerson.name.toLowerCase().includes(searchValue.toLowerCase()) &&
-                singlePerson.name !== selectedTimer && singlePerson.name !== selectedRoundRobin
+                singlePerson.id !== selectedTimerObj.id && singlePerson.id !== selectedRoundRobinObj.id
             );
         })]);
     });
 
     useEffect(() => {
         let timerList = nameList.filter((singlePerson) => {
-            return(singlePerson.name !== selectedRoundRobin);
+            return(singlePerson.id !== selectedRoundRobinObj.id);
         });
         setTimerOptions([...timerList]);
         searchAction(searchKey);
-    },[selectedRoundRobin]);
+    },[selectedRoundRobinObj]);
 
     useEffect(() => {
-        let timerList = nameList.filter((singlePerson) => {
-            return((singlePerson.name !== selectedTimer));
+        let roundRobinMasterList = nameList.filter((singlePerson) => {
+            return((singlePerson.id !== selectedTimerObj.id));
         });
-        setRoundRobinOptions([...timerList]);
+        setRoundRobinOptions([...roundRobinMasterList]);
         searchAction(searchKey);
-    },[selectedTimer]);
+    },[selectedTimerObj]);
 
     const newGuestEnterAction = (list) => {
         setNewGuestList([...list]);
@@ -85,7 +85,7 @@ export default function SetUp(props){
 
     const speakerSelectAction = (index, clickedSpeaker) => {
         speakerList.map((singleSpeaker) => {
-            if(singleSpeaker.name === clickedSpeaker.name){
+            if(singleSpeaker.id === clickedSpeaker.id){
                 singleSpeaker.isSelected = !singleSpeaker.isSelected;
             }
         });
@@ -96,19 +96,19 @@ export default function SetUp(props){
 
     const orderGenerateAction = (() => {
         let pureSpeakerList = speakerList.filter((singlePerson) => {
-            return(singlePerson.isSelected && (singlePerson.name !== selectedTimer) && (singlePerson.name !== selectedRoundRobin));
+            return(singlePerson.isSelected && (singlePerson.id !== selectedTimerObj.id) && (singlePerson.id !== selectedRoundRobinObj.id));
         });
         let randomOrderedList = pureSpeakerList.sort(() => Math.random() - 0.5);
-        if(selectedRoundRobin){
+        if(selectedRoundRobinObj.id){
             selectedRoundRobinObj["type"]="RR Master";
             randomOrderedList.unshift(selectedRoundRobinObj);
         }
-        if(selectedTimer){
+        if(selectedTimerObj.id){
             selectedTimerObj["type"]="Timer";
             randomOrderedList.push(selectedTimerObj);
         }
         setArrangedList([...randomOrderedList]);   
-        setIsSpeakerOrderModalOpen(true);     
+        setIsSpeakerOrderModalOpen(randomOrderedList.length > 0);     
     })
 
     const launchAction = () => {
@@ -163,11 +163,9 @@ export default function SetUp(props){
                                 value={selectedRoundRobinObj}
                                 onChange={(event,newValue)=>{
                                     if(!newValue){
-                                        setSelectedRoundRobin(null);
-                                        setSelectedRoundRobinObj(null);
+                                        setSelectedRoundRobinObj({});
                                     }else{
-                                        setSelectedRoundRobin(newValue.name);
-                                        setSelectedRoundRobinObj(newValue);
+                                        setSelectedRoundRobinObj({...newValue});
                                     }
                                 }}
                                 options={roundRobinOptions}
@@ -197,11 +195,9 @@ export default function SetUp(props){
                                 value={selectedTimerObj}
                                 onChange={(event,newValue)=>{
                                     if(!newValue){
-                                        setSelectedTimer(null);
-                                        setSelectedTimerObj(null);
+                                        setSelectedTimerObj({});
                                     }else{
-                                        setSelectedTimer(newValue.name);
-                                        setSelectedTimerObj(newValue);
+                                        setSelectedTimerObj({...newValue});
                                     }
                                 }}
                                 options={timerOptions}

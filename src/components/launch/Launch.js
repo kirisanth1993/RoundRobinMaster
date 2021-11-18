@@ -45,7 +45,6 @@ const Launch = (props) => {
             </Grid>
             <Grid container display="flex" justifyContent="space-between">
                 <Grid item md={5} lg={5} sm={5} xs={12}>
-                    {console.log("window.screen.height", window.screen.height)}
                     {
                         isImgSlider &&
                         <SimpleImageSlider
@@ -54,7 +53,7 @@ const Launch = (props) => {
                             // height={window.screen.height < 1080 ? 490 : 690}
                             height={490}
                             images={speakerList}
-                            showBullets={true}
+                            // showBullets={true}
                             showNavs={true}
                             style={{position: "relative"}}
                             navSize={ 80 }
