@@ -95,7 +95,7 @@ export default function GuestAddingModal(props){
                                         variant="outlined"
                                         error={ singleGuest.isError }
                                         value={ singleGuest.name }
-                                        onChange={ (e) => { nameChangeAction(e, singleGuestIndex) } }
+                                        onChange={ (e) => { !(/^ *$/.test(e.target.value)) && nameChangeAction(e, singleGuestIndex) } }
                                     />
                                     </Grid>
                                     <Grid item lg={3} md={3} sm={3} xs={4}>

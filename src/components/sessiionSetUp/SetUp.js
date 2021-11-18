@@ -36,13 +36,13 @@ export default function SetUp(props){
     useEffect(() => {
         newGuestList.map((singleGuest, singleGuestIndex) => {
             speakerList.push({
-                id: speakerList.length + singleGuestIndex + 1,
+                id: speakerList.length + 1,
                 name: "Guest " + singleGuest.name,
                 imageLink: "guest.png",
                 isSelected: true
             });
             filteredSpeakerList.push({
-                id: speakerList.length + singleGuestIndex + 1,
+                id: speakerList.length + 1,
                 name: "Guest " + singleGuest.name,
                 imageLink: "guest1.png",
                 isSelected: true
