@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/RoundRobinMaster/static/css/main.dbde209c.chunk.css",
-    "main.js": "/RoundRobinMaster/static/js/main.9ce1b8ab.chunk.js",
-    "main.js.map": "/RoundRobinMaster/static/js/main.9ce1b8ab.chunk.js.map",
+    "main.css": "/RoundRobinMaster/static/css/main.ed9850c7.chunk.css",
+    "main.js": "/RoundRobinMaster/static/js/main.254b57eb.chunk.js",
+    "main.js.map": "/RoundRobinMaster/static/js/main.254b57eb.chunk.js.map",
     "runtime-main.js": "/RoundRobinMaster/static/js/runtime-main.e6cf2259.js",
     "runtime-main.js.map": "/RoundRobinMaster/static/js/runtime-main.e6cf2259.js.map",
     "static/js/2.6884938d.chunk.js": "/RoundRobinMaster/static/js/2.6884938d.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.44506330.chunk.js": "/RoundRobinMaster/static/js/3.44506330.chunk.js",
     "static/js/3.44506330.chunk.js.map": "/RoundRobinMaster/static/js/3.44506330.chunk.js.map",
     "index.html": "/RoundRobinMaster/index.html",
-    "static/css/main.dbde209c.chunk.css.map": "/RoundRobinMaster/static/css/main.dbde209c.chunk.css.map",
+    "static/css/main.ed9850c7.chunk.css.map": "/RoundRobinMaster/static/css/main.ed9850c7.chunk.css.map",
     "static/js/2.6884938d.chunk.js.LICENSE.txt": "/RoundRobinMaster/static/js/2.6884938d.chunk.js.LICENSE.txt",
     "static/media/arjuna.jpg": "/RoundRobinMaster/static/media/arjuna.92cf7754.jpg",
     "static/media/arjuna.psd": "/RoundRobinMaster/static/media/arjuna.bb4d3a0a.psd",
@@ -91,7 +91,7 @@
   "entrypoints": [
     "static/js/runtime-main.e6cf2259.js",
     "static/js/2.6884938d.chunk.js",
-    "static/css/main.dbde209c.chunk.css",
-    "static/js/main.9ce1b8ab.chunk.js"
+    "static/css/main.ed9850c7.chunk.css",
+    "static/js/main.254b57eb.chunk.js"
   ]
 }
