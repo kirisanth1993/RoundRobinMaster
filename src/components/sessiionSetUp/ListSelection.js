@@ -17,6 +17,7 @@ export default function ListSelection(props){
                                 >
                                 <Grid item md={3} lg={3} sm={3}>
                                     <img 
+                                        className="singleListImage"
                                         height={50} 
                                         width={50} 
                                         src={ require(`../../assets/${singleSpeaker.imageLink}`).default }
