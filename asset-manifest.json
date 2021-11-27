@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/RoundRobinMaster/static/css/main.42ac7fe6.chunk.css",
-    "main.js": "/RoundRobinMaster/static/js/main.b7e72d43.chunk.js",
-    "main.js.map": "/RoundRobinMaster/static/js/main.b7e72d43.chunk.js.map",
+    "main.js": "/RoundRobinMaster/static/js/main.52cd6e03.chunk.js",
+    "main.js.map": "/RoundRobinMaster/static/js/main.52cd6e03.chunk.js.map",
     "runtime-main.js": "/RoundRobinMaster/static/js/runtime-main.e6cf2259.js",
     "runtime-main.js.map": "/RoundRobinMaster/static/js/runtime-main.e6cf2259.js.map",
     "static/js/2.6884938d.chunk.js": "/RoundRobinMaster/static/js/2.6884938d.chunk.js",
@@ -43,8 +43,8 @@
     "static/media/guest1.jpg": "/RoundRobinMaster/static/media/guest1.00d08fb7.jpg",
     "static/media/kavingi.jpg": "/RoundRobinMaster/static/media/kavingi.01d4c24a.jpg",
     "static/media/kavingi.psd": "/RoundRobinMaster/static/media/kavingi.39caa7ba.psd",
-    "static/media/kirisanth.jpg": "/RoundRobinMaster/static/media/kirisanth.2e6f4966.jpg",
     "static/media/kirisanth.psd": "/RoundRobinMaster/static/media/kirisanth.3684682a.psd",
+    "static/media/kirisanth.jpg": "/RoundRobinMaster/static/media/kirisanth.4d884ea7.jpg",
     "static/media/kirisanth1.jpg": "/RoundRobinMaster/static/media/kirisanth1.f983292f.jpg",
     "static/media/maheshi.psd": "/RoundRobinMaster/static/media/maheshi.54f96608.psd",
     "static/media/maheshi.jpg": "/RoundRobinMaster/static/media/maheshi.a5d827af.jpg",
@@ -92,6 +92,6 @@
     "static/js/runtime-main.e6cf2259.js",
     "static/js/2.6884938d.chunk.js",
     "static/css/main.42ac7fe6.chunk.css",
-    "static/js/main.b7e72d43.chunk.js"
+    "static/js/main.52cd6e03.chunk.js"
   ]
 }
