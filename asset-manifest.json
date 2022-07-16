@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/RoundRobinMaster/static/css/main.42ac7fe6.chunk.css",
-    "main.js": "/RoundRobinMaster/static/js/main.8ae71419.chunk.js",
-    "main.js.map": "/RoundRobinMaster/static/js/main.8ae71419.chunk.js.map",
+    "main.js": "/RoundRobinMaster/static/js/main.c32fa76a.chunk.js",
+    "main.js.map": "/RoundRobinMaster/static/js/main.c32fa76a.chunk.js.map",
     "runtime-main.js": "/RoundRobinMaster/static/js/runtime-main.ef435599.js",
     "runtime-main.js.map": "/RoundRobinMaster/static/js/runtime-main.ef435599.js.map",
     "static/js/2.bfbecbf4.chunk.js": "/RoundRobinMaster/static/js/2.bfbecbf4.chunk.js",
@@ -98,6 +98,6 @@
     "static/js/runtime-main.ef435599.js",
     "static/js/2.bfbecbf4.chunk.js",
     "static/css/main.42ac7fe6.chunk.css",
-    "static/js/main.8ae71419.chunk.js"
+    "static/js/main.c32fa76a.chunk.js"
   ]
 }
