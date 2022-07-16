@@ -163,7 +163,7 @@ export const nameList = [
     },
     {
         id: 28,
-        name: "TM Rajeka Perera",
+        name: "TM Rajika Perera",
         imageLink: "rajika.jpg",
         isSelected: false
     },
